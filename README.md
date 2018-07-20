@@ -14,7 +14,7 @@ This server stores everything in-memory, so every time you restart the server, y
 git clone https://github.com/gSchool/collective-api.git
 cd collective-api
 npm install
-node server.js
+npm start
 ```
 
 Then you can see the API running on [http://localhost:8082](http://localhost:8082)
