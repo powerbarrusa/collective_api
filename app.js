@@ -14,6 +14,7 @@ const posts = require('./app/posts/routes')
 const comments = require('./app/comments/routes')
 const cameras = require('./app/cameras/routes')
 const books = require('./app/books/routes')
+const movies = require('./app/movies/routes')
 
 const app = express()
 
@@ -38,6 +39,7 @@ app.use('/api', posts)
 app.use('/api', comments)
 app.use('/api', cameras)
 app.use('/api', books)
+app.use('/api', movies)
 app.get('/', (req, res, next) => res.redirect('/api'))
 
 app.use(function(req, res, next) {
