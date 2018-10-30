@@ -12,20 +12,20 @@ router.get('/movies/:id', (req, res) => {
   res.json(movie)
 })
 
-router.post('/movies', (req, res) => {
-  const newMovie = db.movies.insert({
-    "title": req.body.title,
-    "subtitle": req.body.subtitle,
-    "author": req.body.author,
-    "published": req.body.published,
-    "publisher": req.body.publisher,
-    "pages": req.body.pages,
-    "description": req.body.description,
-    "website": req.body.website,
-    "inCart": false
-  })
-  res.json(newMovie)
-})
+// router.post('/movies', (req, res) => {
+//   const newMovie = db.movies.insert({
+//     "title": req.body.title,
+//     "subtitle": req.body.subtitle,
+//     "author": req.body.author,
+//     "published": req.body.published,
+//     "publisher": req.body.publisher,
+//     "pages": req.body.pages,
+//     "description": req.body.description,
+//     "website": req.body.website,
+//     "inCart": false
+//   })
+//   res.json(newMovie)
+// })
 
 router.patch('/movies/cart/add/:id', function(req, res) {
   const movie = db.movies.find(req.params.id)
