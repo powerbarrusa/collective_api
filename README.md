@@ -33,6 +33,7 @@ Then you can see the API running on [http://localhost:8082](http://localhost:808
 
 ### Project: React Inbox
 - GET (all messages): `http://localhost:8082/api/messages`
+- PATCH (updates multiple messages, see API for req.body requirements): `http://localhost:8082/api/messages`  
 
 ### Redux Unit - Reddit Clone
 - GET (all posts) /POST (add post): `http://localhost:8082/api/posts`
