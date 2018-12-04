@@ -27,13 +27,28 @@ router.post('/books', (req, res) => {
   res.json(newBook)
 })
 
-router.patch('/books/cart/add/:id', function(req, res) {
+router.put('/books/:id', (req, res) => {
+  const updatedBook = db.books.findByIdAndUpdate(req.params.id, {
+    "title": req.body.title,
+    "subtitle": req.body.subtitle,
+    "author": req.body.author,
+    "published": req.body.published,
+    "publisher": req.body.publisher,
+    "pages": req.body.pages,
+    "description": req.body.description,
+    "website": req.body.website,
+    "inCart": false
+  })
+  res.json(updatedBook)
+})
+
+router.patch('/books/cart/add/:id', function (req, res) {
   const book = db.books.find(req.params.id)
   book.inCart = true
   res.json(book)
 })
 
-router.patch('/books/cart/remove/:id', function(req, res) {
+router.patch('/books/cart/remove/:id', function (req, res) {
   const book = db.books.find(req.params.id)
   book.inCart = false
   res.json(book)
